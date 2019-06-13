@@ -1,2 +1,2 @@
-# crud_app
-CRUD App for managing books in an online Library
+## Online BookManager(CRUD APP)
+This is an online bookmanager that allows the user to create, read, update book info.

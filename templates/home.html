@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FLASK CRUD APP</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width = device - width, initial - scale = 1.0">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='crud.css') }}">
+
+</head>
+<body>
+	<div class="book">
+		<form method="POST" action="/">
+			<fieldset>
+				<legend>Book Manager</legend>
+				<input type="text" name="title" placeholder="Title" required>
+				<input type="text" name="author" placeholder="Author" required>
+				<input type="text" name="publisher" placeholder="Publisher" required>
+
+				<button type="submit" value="Add">Add</button>
+			</fieldset>
+		</form>
+	</div>
+
+
+	<h1 style="text-align: center;">Books stored</h1>
+
+	<table>
+    {% for book in books %}
+     
+     <tr>
+
+      <td>{{book.title}} <br> {{book.author}} <br> {{book.publisher}}</td>
+
+      <td>
+      	<div class="update">
+	      <form method="POST" action="./update" style="display: inline;">
+		    <input type="hidden" value="{{book.title}}" name="oldtitle">
+		    <input type="text" value="{{book.title}}" name="newtitle">
+
+		    <input type="hidden" value="{{book.author}}" name="old_author">
+		    <input type="text" value="{{book.author}}" name="new_author">
+
+		    <input type="hidden" value="{{book.publisher}}" name="old_publisher">
+		    <input type="text" value="{{book.publisher}}" name="new_publisher">
+
+		    <button type="submit" value="Update">Update</button>
+		   </form>
+	   </div>
+	   </td> 
+
+	   <td>
+	   <form method="POST" action="./delete" style="display: inline;">
+		<input type="hidden" value="{{book.title}}" name="title">
+		<input type="hidden" value="{{book.author}}" name="author">
+		<input type="hidden" value="{{book.publisher}}" name="publisher">
+
+		<button type="submit" value="Delete">Delete</button>
+	   </form>
+	   </td>
+
+	   </tr>
+	{% endfor %}
+	</table>	
+</body>
+</html>

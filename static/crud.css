@@ -1,0 +1,46 @@
+*{box-sizing: border-box;}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+}
+
+.book {
+	width:25%;
+	padding: 40px;
+}
+
+.update{width: 50%; margin: auto; margin: 0 20px;}
+
+
+/* Bordered form */
+
+td {
+	padding: 20px;
+	border-collapse: collapse;
+	}	
+
+/* Full-width inputs */
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    	opacity: 0.8;
+}
